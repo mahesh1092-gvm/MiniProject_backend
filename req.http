@@ -1,0 +1,30 @@
+###create employee
+POST http://localhost:5000/employee/create
+Content-Type: application/json
+
+{
+    "name":"Venkat",
+    "email":"Venkat@email.com",
+    "mobile":8997877,
+    "designasation":"teacher",
+    "companyName":"Anurag"
+
+}
+
+###Get
+GET http://localhost:5000/employee/list
+###Update
+PUT http://localhost:5000/employee/update/69ca29c0fbb3136e8ede0a1b
+Content-Type: application/json
+
+{
+    "name":"Venkatesh",
+    "email":"Venkat@email.com",
+    "mobile":8997877,
+    "designasation":"teacher",
+    "companyName":"Anurag"
+
+}
+
+###delet
+DELETE http://localhost:5000/employee/delete/69ca28920dba98fdebdf4085
