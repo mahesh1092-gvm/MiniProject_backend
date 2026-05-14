@@ -1,3 +1,10 @@
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://mini-project-frontend-beryl.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
+
 import exp from 'express'
 import { connect } from 'mongoose'
 import { config } from 'dotenv'
