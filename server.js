@@ -7,13 +7,18 @@ config()
 
  const app=exp()
 app.use(exp.json())
+import cors from "cors";
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://mini-project-frontend-beryl.vercel.app/"
-  ],
-  credentials: true
+  origin: ["https://mini-project-frontend-beryl.vercel.app"], // your frontend domain
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+// Ensure OPTIONS requests are handled
+app.options("*", cors());
+
 app.use('/employee',empapp)
 
 
