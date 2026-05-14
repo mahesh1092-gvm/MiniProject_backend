@@ -7,18 +7,13 @@ config()
 
  const app=exp()
 app.use(exp.json())
-import cors from "cors";
-
 app.use(cors({
-  origin: ["https://mini-project-frontend-beryl.vercel.app"], // your frontend domain
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  origin: [
+    "http://localhost:5173",
+    "https://mini-project-frontend-beryl.vercel.app"
+  ],
+  credentials: true
 }));
-
-// Ensure OPTIONS requests are handled
-app.options("*", cors());
-
 app.use('/employee',empapp)
 
 
@@ -26,7 +21,7 @@ app.use('/employee',empapp)
 async function connectDb(){
   try{
     await connect(process.env.DB_URL)
-    console.log("DB Connection successful")
+    console.log("DB Connscted succesfully")
     app.listen(process.env.PORT||5000,()=>
     console.log(`Server connected Succesfully with port ${process.env.PORT}`)
     )
