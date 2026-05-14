@@ -10,7 +10,7 @@ app.use(exp.json())
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://mini-frontend-gamma.vercel.app"
+    "https://mini-project-frontend-beryl.vercel.app/"
   ],
   credentials: true
 }));
